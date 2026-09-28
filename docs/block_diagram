@@ -1,0 +1,46 @@
+                 TARGET ANGLE
+                      │
+                      ▼
+          ┌──────────────────────┐
+          │ Position Controller  │
+          │                      │
+          │ Error calculation    │
+          │ Direction selection  │
+          │ Speed selection      │
+          └──────────┬───────────┘
+                     │
+              Direction / Speed
+                     │
+                     ▼
+          ┌──────────────────────┐
+          │    STEP Generator   │
+          └──────────┬───────────┘
+                     │
+                  STEP / DIR
+                     │
+                     ▼
+          ┌──────────────────────┐
+          │    Virtual Wafer     │
+          │       Model          │
+          └──────────┬───────────┘
+                     │
+                  Encoder A/B
+                     │
+                     ▼
+          ┌──────────────────────┐
+          │  Encoder Decoder     │
+          └──────────┬───────────┘
+                     │
+                Current Angle
+                     │
+          ┌──────────┴──────────┐
+          │                     │
+          ▼                     ▼
+ ┌─────────────────┐   ┌─────────────────┐
+ │ Alignment       │   │ Alignment FSM   │
+ │ Detector        │──►│                 │
+ └─────────────────┘   └───────┬─────────┘
+                               │
+                    ┌──────────┼──────────┐
+                    ▼          ▼          ▼
+                   DONE       FAULT      BUSY
